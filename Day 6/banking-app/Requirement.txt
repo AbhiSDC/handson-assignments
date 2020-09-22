@@ -1,0 +1,9 @@
+You must follow naming conventions
+Use Factory Pattern wherever necessary
+main method is a view & controller which will have below options:
+
+1. Store Account
+2. Fetch All Accounts
+3. Fetch Account By Id
+4. Transfer Amount
+5. Exit
