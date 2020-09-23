@@ -56,7 +56,7 @@ public class FileBackedDao implements UserDao {
 			fis.close();
 		}
 		catch(IOException e) {
-			File file = new File("fileD.ser");
+			File file = new File("fileDb.ser");
 			if(file.createNewFile()) {
 				 System.out.println("File Not Found! New File has been created.");
 			}
