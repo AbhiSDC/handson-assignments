@@ -71,14 +71,28 @@ public class FileBackedUserDao implements UserDao {
 
 	@Override
 	public User fetchUserById(int userId) {
-		// TODO Auto-generated method stub
+		this.usersList = deserialize();
+		for(User user : usersList) {
+			if(user.getUserId() == userId) {
+				return user;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public User updateUser(int userId, User user) {
-		// TODO Auto-generated method stub
-		return null;
+		this.usersList = deserialize();
+		int ind = 0;
+		for(User us : usersList) {
+			if(us.getUserId() == userId) {
+				ind = usersList.indexOf(us);
+				break;
+			}
+		}
+		usersList.set(ind, user);
+		serialize(usersList);
+		return user;
 	}
 
 }
