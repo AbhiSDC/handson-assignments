@@ -21,12 +21,14 @@ public class DisplayItemsServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	
+	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
 		HttpSession session = request.getSession();
-		ArrayList<String> itemsList = (ArrayList<String>) session.getAttribute("list");
+		ArrayList<String> itemsList = (ArrayList<String>) session.getAttribute("itemsList");
+		pw.print("All the selected Items are: <br />");
 		for(String item : itemsList) {
-			pw.print("<p>" + item + "</p><br />");
+			pw.print(item + "<br />");
 		}
 	}
 
