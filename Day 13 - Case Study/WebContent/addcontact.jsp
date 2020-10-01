@@ -10,11 +10,11 @@
 	<h3>Adding New Contact</h3><hr/>
 	<form action="AddContactServlet" method="post">
 		<label>
-			Name: <input type="text" name="name">		
+			Name: <input type="text" name="name" required>		
 		</label>
 		<br/><br/>
 		<label>
-			Contact No. <input type="number" name="contact">
+			Contact No. <input type="number" name="contact" required>
 		</label>
 		<br/><br/>
 		<input type="submit" value="Add">

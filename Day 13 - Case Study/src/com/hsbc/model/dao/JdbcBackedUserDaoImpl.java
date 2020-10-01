@@ -97,8 +97,8 @@ public class JdbcBackedUserDaoImpl implements UserDao {
 			PreparedStatement preparedStatement = connection.prepareStatement(loginQuery);
 			preparedStatement.setString(1, contact.getContactName());
 			preparedStatement.setLong(2, contact.getContactNo());
-			preparedStatement.setInt(3, contact.getUserId());
-			preparedStatement.executeQuery();
+			preparedStatement.setInt(3, userId);
+			preparedStatement.executeUpdate();
 			
 			String finalQuery = "select contact_id from user_contact where id_ref = ? and name = ? and phone_no = ?";
 			preparedStatement = connection.prepareStatement(finalQuery);
@@ -124,7 +124,7 @@ public class JdbcBackedUserDaoImpl implements UserDao {
 	public List<Contact> fetchAllContacts(int userId) {
 		try {
 			Connection connection = DBUtility.getConnection();
-			String loginQuery = "select * from user_contact whre id_ref = ?";
+			String loginQuery = "select * from user_contact where id_ref = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(loginQuery);
 			preparedStatement.setInt(1, userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -132,7 +132,7 @@ public class JdbcBackedUserDaoImpl implements UserDao {
 				Contact con = new Contact();
 				con.setContactId(resultSet.getInt("contact_id"));
 				con.setContactName(resultSet.getString("name"));
-				con.setContactNo(resultSet.getLong("phone"));
+				con.setContactNo(resultSet.getLong("phone_no"));
 				con.setUserId(resultSet.getInt("id_ref"));
 				contactList.add(con);
 			}
@@ -205,12 +205,11 @@ public class JdbcBackedUserDaoImpl implements UserDao {
 	public void deleteContact(int userId, int contactId) {
 		try {
 			Connection connection = DBUtility.getConnection();
-			String loginQuery = "delete from user_contact where contact_id = ? and user_id = ?";
+			String loginQuery = "delete from user_contact where contact_id = ? and id_ref = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(loginQuery);
 			preparedStatement.setInt(1, contactId);
 			preparedStatement.setInt(2, userId);
 			preparedStatement.executeUpdate();
-			
 			preparedStatement.close();
 			connection.close();
 		} catch (SQLException | ClassNotFoundException e) {

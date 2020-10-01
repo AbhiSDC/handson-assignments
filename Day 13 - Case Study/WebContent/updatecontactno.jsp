@@ -10,11 +10,11 @@
 	<p>Current Contact No.: ${newContact.contactNo}</p>
 	<form action="UpdateContactPhoneServlet" method="post">
 		<label>
-			Contact ID: <input type="text" name="id">
+			Contact ID: <input type="text" name="id" required>
 		</label>
 		<br/><br/>
 		<label>
-			New No.: <input type="number" name="contact">
+			New No.: <input type="number" name="contact" required>
 		</label>
 		<br/><br/>
 		<input type="submit" value="Update">

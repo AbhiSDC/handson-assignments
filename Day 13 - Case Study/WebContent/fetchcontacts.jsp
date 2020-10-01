@@ -14,8 +14,8 @@
 		<thead class='thead-dark'>
 				<tr>
 					<th>Contact ID</th>
-					<th>Name</th>
-					<th>Phone No.</th>
+					<th>Contact Name</th>
+					<th>Contact No.</th>
 					<th>User ID</th>
 				</tr>
 		</thead>

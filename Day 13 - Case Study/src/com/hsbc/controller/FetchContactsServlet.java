@@ -32,8 +32,8 @@ public class FetchContactsServlet extends HttpServlet {
 		
 		UserService service = (UserService) UserFactory.getInstance(LayerType.SERVICE);
 		User user = (User) session.getAttribute("userKey");
-		List<Contact> usersList = service.fetchAllContacts(user.getUserId());
-		session.setAttribute("usersList", usersList);
+		List<Contact> contactList = service.fetchAllContacts(user.getUserId());
+		session.setAttribute("contactList", contactList);
 		RequestDispatcher rd = request.getRequestDispatcher("fetchcontacts.jsp");
 		rd.forward(request, response);
 	}

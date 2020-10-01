@@ -24,7 +24,7 @@
 	<h4>Update Password: <a href="updatepwdinitial.jsp">Password</a></h4>
 	<hr />
 	<h3>Deleting Options:</h3>
-	<h4>Delete User Profile: <a href="deleteuser.jsp">Phone No.</a></h4>
-	<h4>Delete any Contact: <a href="deletecontact.jsp">Password</a></h4>
+	<h4>Delete User Profile: <a href="deleteuser.jsp">Delete User</a></h4>
+	<h4>Delete any Contact: <a href="deletecontact.jsp">Delete Contact</a></h4>
 </body>
 </html>

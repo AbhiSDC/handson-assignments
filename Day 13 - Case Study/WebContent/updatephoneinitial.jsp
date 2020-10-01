@@ -10,7 +10,7 @@
 	<p>Current Phone No.: ${userKey.phone}</p>
 	<form action="UpdatePhoneNo" method="post">
 		<label>
-			New Phone No. <input type="text" name="newphone">
+			New Phone No. <input type="text" name="newphone" required>
 		</label>
 		<br/><br/>
 		<input type="submit" value="Update">

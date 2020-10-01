@@ -9,11 +9,11 @@
 <body>
 	<form action="UpdatePassword" method="post">
 		<label>
-			Current Password <input type="text" name="currpwd">
+			Current Password <input type="text" name="currpwd" required>
 		</label>
 		<br/><br/>
 		<label>
-			New Password <input type="text" name="newpwd">
+			New Password <input type="text" name="newpwd" required>
 		</label>
 		<br/><br/>
 		<input type="submit" value="Update">

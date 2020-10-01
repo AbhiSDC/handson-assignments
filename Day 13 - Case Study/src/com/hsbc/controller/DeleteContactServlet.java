@@ -30,7 +30,6 @@ public class DeleteContactServlet extends HttpServlet {
 		UserService service = (UserService) UserFactory.getInstance(LayerType.SERVICE);
 		User user = (User) session.getAttribute("userKey");
 		service.deleteContact(user.getUserId(), Integer.parseInt(request.getParameter("id")));
-		session.invalidate();
 		response.getWriter().print("<h3 style='color:green'>Contact has been deleted successfully.</h3>");
 		RequestDispatcher rd = request.getRequestDispatcher("loginsuccess.jsp");
 		rd.include(request, response);

@@ -12,7 +12,7 @@
 	<h3>If you are sure, click on the link below:</h3><br/><br/>
 	<form action="DeleteContactServlet">
 		<label>
-			Contact Id: <input type="text" name="id">
+			Contact Id: <input type="text" name="id" required>
 		</label>
 		<input type="submit" value="Delete">
 	</form>
