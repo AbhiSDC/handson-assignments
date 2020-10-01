@@ -1,0 +1,28 @@
+.header-text {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding : 2px;
+    border-radius : 25px;
+}
+.content-left {
+    background-color: cyan;
+    width: 300px;
+    border-radius: 25px;
+    text-align: center;
+    padding : 2px;
+}
+.content-center {
+    text-align: center;
+    display: inline;
+}
+.button-style { 
+    background-color: blue;
+    color:white;
+    width: max-content;
+    height: max-content;
+}
+.myClass {
+    width: 100px;
+    height: 100px;
+}

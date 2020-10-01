@@ -1,0 +1,13 @@
+p, h2 {
+    color: blueviolet;
+}
+
+.red-color {
+    color : red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-center {
+    text-align: center;
+    border : red 2px solid;
+}
